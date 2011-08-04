@@ -34,7 +34,7 @@ class mine_sweeper_tests(unittest.TestCase):
         self.assertEquals(3, width)
 
     def test_guarda_las_celdas_de_un_campo(self):
-        fields = "2 3\n...\n...\n0 0"
+        fields = "2 3\n...\n*..\n0 0"
 
         field_count = width = height = 0
         tiles = []
@@ -49,5 +49,6 @@ class mine_sweeper_tests(unittest.TestCase):
                     tiles.append(tile)
 
         self.assertEquals(6, len(tiles))
+        self.assertEquals("*", tiles[3])
 
         
