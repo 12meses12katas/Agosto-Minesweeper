@@ -12,8 +12,10 @@ class mine_sweeper_tests(unittest.TestCase):
         field_count = 0
         for line in fields.split("\n"):
             if (self.isHeader(line)):
-                if (EOF != line):
-                    field_count += 1
+                if (EOF == line):
+                    break
+                field_count += 1
+                height, width = map(lambda text: int(text), line.split(" "))
 
         self.assertEquals(1, field_count)
 
