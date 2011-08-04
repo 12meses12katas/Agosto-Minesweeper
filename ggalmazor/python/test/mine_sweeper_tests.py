@@ -33,6 +33,18 @@ class mine_sweeper_tests(unittest.TestCase):
         self.assertEquals(2, height)
         self.assertEquals(3, width)
 
+    def test_guarda_las_celdas_de_un_campo(self):
+        fields = "2 3\n...\n...\n0 0"
 
+        field_count = width = height = 0
+        tiles = []
+        for line in fields.split("\n"):
+            if (self.isHeader(line)):
+                if (EOF == line):
+                    break
+                field_count += 1
+                height, width = map(lambda text: int(text), line.split(" "))
+
+        self.assertEquals(6, len(tiles))
 
         
