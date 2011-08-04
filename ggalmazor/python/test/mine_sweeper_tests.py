@@ -44,6 +44,9 @@ class mine_sweeper_tests(unittest.TestCase):
                     break
                 field_count += 1
                 height, width = map(lambda text: int(text), line.split(" "))
+            else:
+                for tile in line:
+                    tiles.append(tile)
 
         self.assertEquals(6, len(tiles))
 
