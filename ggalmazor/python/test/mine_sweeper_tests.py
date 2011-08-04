@@ -17,4 +17,17 @@ class mine_sweeper_tests(unittest.TestCase):
 
         self.assertEquals(1, field_count)
 
+    def test_sabe_el_ancho_y_el_alto_de_cada_campo(self):
+        fields = "2 3\n...\n...\n0 0"
+
+        field_count = width = height =  0
+        for line in fields.split("\n"):
+            if (self.isHeader(line)):
+                if (EOF != line):
+                    field_count += 1
+
+        self.assertEquals(2, height)
+        self.assertEquals(3, width)
+
+
         
