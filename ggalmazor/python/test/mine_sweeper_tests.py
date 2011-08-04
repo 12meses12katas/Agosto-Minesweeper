@@ -61,7 +61,11 @@ class mine_sweeper_tests(unittest.TestCase):
                 position = x + y * width
                 tile = tiles[position]
                 if ("." == tile):
-                    tile = str(0)
+                    mines = 0
+                    for boundary_position in range(position -4, position + 5):
+                        if (boundary_position >= 0 and boundary_position < len(tiles)):
+                            mines += 1 if ("*" == tiles[boundary_position]) else 0
+                    tile = str(mines)
                 solution += tile
             solution += NEW_LINE
         solution += NEW_LINE
