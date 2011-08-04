@@ -25,6 +25,7 @@ class mine_sweeper_tests(unittest.TestCase):
             if (self.isHeader(line)):
                 if (EOF != line):
                     field_count += 1
+                    height, width = map(lambda text: int(text), line.split(" "))
 
         self.assertEquals(2, height)
         self.assertEquals(3, width)
