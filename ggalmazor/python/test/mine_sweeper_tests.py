@@ -65,6 +65,9 @@ class mine_sweeper_tests(unittest.TestCase):
             tile = str(self.count_mines_at(position, tiles))
         return tile
 
+    def get_position(self, width, x, y):
+        return x + y * width
+
     def test_resuelve_un_campo_de_3x3_con_una_mina_en_el_medio(self):
         fields = "3 3\n...\n.*.\n...\n0 0"
 
@@ -73,7 +76,7 @@ class mine_sweeper_tests(unittest.TestCase):
         solution = "Field #1:" + NEW_LINE
         for y in range(0, height):
             for x in range(0, width):
-                position = x + y * width
+                position = self.get_position(width, x, y)
                 solution += self.reveal_tile(position, tiles)
             solution += NEW_LINE
         solution += NEW_LINE
