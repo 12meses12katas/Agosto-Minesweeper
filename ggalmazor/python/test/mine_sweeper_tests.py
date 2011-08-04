@@ -38,50 +38,33 @@ class mine_sweeper_tests(unittest.TestCase):
 
         field_count, height, tiles, width = self.parse_fields(fields)
 
-        solution = "Field #1:" + NEW_LINE
-        for y in range(0, height):
-            for x in range(0, width):
-                position = x + y * width
-                tile = tiles[position]
-                if ("." == tile):
-                    tile = str(0)
-                solution += tile
-            solution += NEW_LINE
-        solution += NEW_LINE
+        field_number = str(1)
+        solution = self.solve_field(field_number, height, tiles, width)
 
         exp_solution = "Field #1:\n0\n\n"
         self.assertEquals(exp_solution, solution)
 
-    def count_mines_at(self, position, tiles):
-        mines = 0
-        for boundary_position in range(position - 4, position + 5):
-            if (boundary_position >= 0 and boundary_position < len(tiles)):
-                mines += 1 if ("*" == tiles[boundary_position]) else 0
-        return mines
-
-    def reveal_tile(self, position, tiles):
-        tile = tiles[position]
-        if (SAFE_TILE == tile):
-            tile = str(self.count_mines_at(position, tiles))
-        return tile
-
-    def get_position(self, width, x, y):
-        return x + y * width
 
     def test_resuelve_un_campo_de_3x3_con_una_mina_en_el_medio(self):
         fields = "3 3\n...\n.*.\n...\n0 0"
 
         field_count, height, tiles, width = self.parse_fields(fields)
 
-        solution = "Field #1:" + NEW_LINE
-        for y in range(0, height):
-            for x in range(0, width):
-                position = self.get_position(width, x, y)
-                solution += self.reveal_tile(position, tiles)
-            solution += NEW_LINE
-        solution += NEW_LINE
+        field_number = str(1)
+        solution = self.solve_field(field_number, height, tiles, width)
 
         exp_solution = "Field #1:\n111\n1*1\n111\n\n"
+        self.assertEquals(exp_solution, solution)
+
+    def test_resuelve_dos_campos_de_1x1(self):
+        fields = "1 1\n.\n1 1\n.\n0 0"
+
+        field_count, height, tiles, width = self.parse_fields(fields)
+
+        field_number = str(1)
+        solution = self.solve_field(field_number, height, tiles, width)
+
+        exp_solution = "Field #1:\n0\n\nField #2:\n0\n\n"
         self.assertEquals(exp_solution, solution)
 
     def is_header(self, line):
@@ -103,6 +86,32 @@ class mine_sweeper_tests(unittest.TestCase):
             else:
                 self.readTiles(line, tiles)
         return field_count, height, tiles, width
+
+    def count_mines_at(self, position, tiles):
+        mines = 0
+        for boundary_position in range(position - 4, position + 5):
+            if (boundary_position >= 0 and boundary_position < len(tiles)):
+                mines += 1 if ("*" == tiles[boundary_position]) else 0
+        return mines
+
+    def reveal_tile(self, position, tiles):
+        tile = tiles[position]
+        if (SAFE_TILE == tile):
+            tile = str(self.count_mines_at(position, tiles))
+        return tile
+
+    def get_position(self, width, x, y):
+        return x + y * width
+
+    def solve_field(self, field_number, height, tiles, width):
+        solution = "Field #" + field_number + ":" + NEW_LINE
+        for y in range(0, height):
+            for x in range(0, width):
+                position = self.get_position(width, x, y)
+                solution += self.reveal_tile(position, tiles)
+            solution += NEW_LINE
+        solution += NEW_LINE
+        return solution
 
 
         
