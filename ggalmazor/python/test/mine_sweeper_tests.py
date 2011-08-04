@@ -1,5 +1,7 @@
 import unittest
 
+SAFE_TILE = "."
+
 NEW_LINE = "\n"
 
 EOF = "0 0"
@@ -50,6 +52,13 @@ class mine_sweeper_tests(unittest.TestCase):
         exp_solution = "Field #1:\n0\n\n"
         self.assertEquals(exp_solution, solution)
 
+    def count_mines_at(self, position, tiles):
+        mines = 0
+        for boundary_position in range(position - 4, position + 5):
+            if (boundary_position >= 0 and boundary_position < len(tiles)):
+                mines += 1 if ("*" == tiles[boundary_position]) else 0
+        return mines
+
     def test_resuelve_un_campo_de_3x3_con_una_mina_en_el_medio(self):
         fields = "3 3\n...\n.*.\n...\n0 0"
 
@@ -60,11 +69,8 @@ class mine_sweeper_tests(unittest.TestCase):
             for x in range(0, width):
                 position = x + y * width
                 tile = tiles[position]
-                if ("." == tile):
-                    mines = 0
-                    for boundary_position in range(position -4, position + 5):
-                        if (boundary_position >= 0 and boundary_position < len(tiles)):
-                            mines += 1 if ("*" == tiles[boundary_position]) else 0
+                if (SAFE_TILE == tile):
+                    mines = self.count_mines_at(position, tiles)
                     tile = str(mines)
                 solution += tile
             solution += NEW_LINE
