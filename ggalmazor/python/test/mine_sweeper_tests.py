@@ -33,6 +33,10 @@ class mine_sweeper_tests(unittest.TestCase):
         self.assertEquals(2, height)
         self.assertEquals(3, width)
 
+    def readTiles(self, line, tiles):
+        for tile in line:
+            tiles.append(tile)
+
     def test_guarda_las_celdas_de_un_campo(self):
         fields = "2 3\n...\n*..\n0 0"
 
@@ -45,10 +49,28 @@ class mine_sweeper_tests(unittest.TestCase):
                 field_count += 1
                 height, width = map(lambda text: int(text), line.split(" "))
             else:
-                for tile in line:
-                    tiles.append(tile)
+                self.readTiles(line, tiles)
 
         self.assertEquals(6, len(tiles))
         self.assertEquals("*", tiles[3])
+
+    def test_resuelve_un_campo_de_1x1_sin_minas(self):
+        fields = "1 1\n.\n0 0"
+
+        field_count = width = height = 0
+        tiles = []
+        solution = ""
+        for line in fields.split("\n"):
+            if (self.isHeader(line)):
+                if (EOF == line):
+                    break
+                field_count += 1
+                height, width = map(lambda text: int(text), line.split(" "))
+            else:
+                self.readTiles(line, tiles)
+
+        exp_solution = "Field #1:\n0\n\n"
+        self.assertEquals(exp_solution, solution)
+
 
         
