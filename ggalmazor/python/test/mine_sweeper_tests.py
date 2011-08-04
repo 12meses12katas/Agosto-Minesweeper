@@ -59,7 +59,6 @@ class mine_sweeper_tests(unittest.TestCase):
 
         field_count = width = height = 0
         tiles = []
-        solution = ""
         for line in fields.split("\n"):
             if (self.isHeader(line)):
                 if (EOF == line):
@@ -69,6 +68,17 @@ class mine_sweeper_tests(unittest.TestCase):
             else:
                 self.readTiles(line, tiles)
 
+        solution = "Field #1:" + "\n"
+        for y in range(0, height):
+            for x in range(0, width):
+                position = x + y * width
+                tile = tiles[position]
+                if ("." == tile):
+                    tile = str(0)
+                solution += tile
+            solution += "\n"
+        solution += "\n"
+        
         exp_solution = "Field #1:\n0\n\n"
         self.assertEquals(exp_solution, solution)
 
