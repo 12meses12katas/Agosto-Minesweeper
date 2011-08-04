@@ -31,7 +31,6 @@ class mine_sweeper_tests(unittest.TestCase):
         self.assertEquals(6, len(tiles))
         self.assertEquals("*", tiles[3])
 
-
     def test_resuelve_un_campo_de_1x1_sin_minas(self):
         fields = "1 1\n.\n0 0"
 
@@ -49,6 +48,25 @@ class mine_sweeper_tests(unittest.TestCase):
         solution += NEW_LINE
 
         exp_solution = "Field #1:\n0\n\n"
+        self.assertEquals(exp_solution, solution)
+
+    def test_resuelve_un_campo_de_3x3_con_una_mina_en_el_medio(self):
+        fields = "3 3\n...\n.*.\n...\n0 0"
+
+        field_count, height, tiles, width = self.parse_fields(fields)
+
+        solution = "Field #1:" + NEW_LINE
+        for y in range(0, height):
+            for x in range(0, width):
+                position = x + y * width
+                tile = tiles[position]
+                if ("." == tile):
+                    tile = str(0)
+                solution += tile
+            solution += NEW_LINE
+        solution += NEW_LINE
+
+        exp_solution = "Field #1:\n111\n1*1\n111\n\n"
         self.assertEquals(exp_solution, solution)
 
     def is_header(self, line):
