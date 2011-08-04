@@ -59,6 +59,12 @@ class mine_sweeper_tests(unittest.TestCase):
                 mines += 1 if ("*" == tiles[boundary_position]) else 0
         return mines
 
+    def reveal_tile(self, position, tiles):
+        tile = tiles[position]
+        if (SAFE_TILE == tile):
+            tile = str(self.count_mines_at(position, tiles))
+        return tile
+
     def test_resuelve_un_campo_de_3x3_con_una_mina_en_el_medio(self):
         fields = "3 3\n...\n.*.\n...\n0 0"
 
@@ -68,10 +74,7 @@ class mine_sweeper_tests(unittest.TestCase):
         for y in range(0, height):
             for x in range(0, width):
                 position = x + y * width
-                tile = tiles[position]
-                if (SAFE_TILE == tile):
-                    tile = str(self.count_mines_at(position, tiles))
-                solution += tile
+                solution += self.reveal_tile(position, tiles)
             solution += NEW_LINE
         solution += NEW_LINE
 
