@@ -1,5 +1,7 @@
 import unittest
 
+NEW_LINE = "\n"
+
 EOF = "0 0"
 
 class mine_sweeper_tests(unittest.TestCase):
@@ -35,7 +37,7 @@ class mine_sweeper_tests(unittest.TestCase):
 
         field_count, height, tiles, width = self.parse_fields(fields)
 
-        solution = "Field #1:" + "\n"
+        solution = "Field #1:" + NEW_LINE
         for y in range(0, height):
             for x in range(0, width):
                 position = x + y * width
@@ -43,8 +45,8 @@ class mine_sweeper_tests(unittest.TestCase):
                 if ("." == tile):
                     tile = str(0)
                 solution += tile
-            solution += "\n"
-        solution += "\n"
+            solution += NEW_LINE
+        solution += NEW_LINE
 
         exp_solution = "Field #1:\n0\n\n"
         self.assertEquals(exp_solution, solution)
