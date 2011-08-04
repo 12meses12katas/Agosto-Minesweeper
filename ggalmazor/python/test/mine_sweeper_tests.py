@@ -70,8 +70,7 @@ class mine_sweeper_tests(unittest.TestCase):
                 position = x + y * width
                 tile = tiles[position]
                 if (SAFE_TILE == tile):
-                    mines = self.count_mines_at(position, tiles)
-                    tile = str(mines)
+                    tile = str(self.count_mines_at(position, tiles))
                 solution += tile
             solution += NEW_LINE
         solution += NEW_LINE
