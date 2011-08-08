@@ -1,14 +1,17 @@
 
+def game
+
+end
 
 Given /^I want to play MineSweeper$/ do
-  pending # express the regexp above with the code you wish you had
+  @game ||= MineSweeper::Game.new
 end
 
-When /^I get the board "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+When /^I get the board$/ do |input_board|
+  @output_board = @game.play input_board
 end
 
-Then /^I should get the board "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then /^I should get the board$/ do |expected_output_board|
+  @output_board.should == expected_output_board
 end
 

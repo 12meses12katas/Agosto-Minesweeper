@@ -6,6 +6,12 @@ Feature: empty board
 
   Scenario: empty game
     Given I want to play MineSweeper
-    When I get the board "0 0\n"
-    Then I should get the board "0 0"
-
+    When I get the board
+      """
+      0 0
+      """
+    Then I should get the board
+      """
+      0 0
+      """
+  
