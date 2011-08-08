@@ -1,0 +1,7 @@
+This is an implementation of MineSweeper kata by lantoli (Leo Antoli).
+
+More information about the kata: https://github.com/12meses12katas/Agosto-Minesweeper
+
+To run acceptance tests:   cucumber
+To run unit tests: rspec spec
+
