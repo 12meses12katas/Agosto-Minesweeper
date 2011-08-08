@@ -7,7 +7,7 @@ Given /^I want to play MineSweeper$/ do
   @game ||= MineSweeper::Game.new
 end
 
-When /^I get the board$/ do |input_board|
+When /^I give the board$/ do |input_board|
   @output_board = @game.play input_board
 end
 
