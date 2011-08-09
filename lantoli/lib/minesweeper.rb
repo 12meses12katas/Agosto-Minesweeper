@@ -70,17 +70,20 @@ module MineSweeper
       @string_board.gsub!(".", "0")
       0.upto(@lines-1) do |line|
         0.upto(@columns-1) do |column|
-          cell = self[line,column] 
-          if cell == "*"
-            (line-1).upto(line+1) do |line_add|
-              (column-1).upto(column+1) do |column_add|
-                  cell_increment line_add, column_add
-              end
-            end
-          end
+          cell_update line,column
         end
       end
       @string_board
+    end
+
+    def cell_update line,column
+      if self[line,column] == "*"
+        (line-1).upto(line+1) do |line_add|
+          (column-1).upto(column+1) do |column_add|
+              cell_increment line_add, column_add
+          end
+        end
+      end
     end
 
     def cell_increment line, column
