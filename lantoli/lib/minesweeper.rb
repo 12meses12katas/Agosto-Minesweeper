@@ -67,12 +67,14 @@ module MineSweeper
     private
 
     def result_board
+      @string_board.gsub!(".", "0")
       0.upto(@lines-1) do |line|
         0.upto(@columns-1) do |column|
-          if self[line,column] == "*"
+          cell = self[line,column] 
+          if cell == "*"
             (line-1).upto(line+1) do |line_add|
               (column-1).upto(column+1) do |column_add|
-                  self[line_add,column_add] = cell_increment line_add, column_add
+                  cell_increment line_add, column_add
               end
             end
           end
@@ -83,11 +85,8 @@ module MineSweeper
 
     def cell_increment line, column
       cell = self[line,column]
-      return "*" if cell == "*"
-      return "1" if cell == "."
-      (cell.to_i + 1).to_s
+      self[line,column] = (cell.to_i + 1).to_s unless cell == "*"
     end
-
 
     def default_string_board
       output = ""

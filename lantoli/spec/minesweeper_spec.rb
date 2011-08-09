@@ -38,7 +38,7 @@ module MineSweeper
 
     it "returns the correct empty board" do
       @subject = Board.new(7,4,3)
-      @subject.to_s.should == "Field #7:\n...\n...\n...\n...\n"
+      @subject.to_s.should == "Field #7:\n000\n000\n000\n000\n"
     end
 
     it "returns the correct board for one mine" do
