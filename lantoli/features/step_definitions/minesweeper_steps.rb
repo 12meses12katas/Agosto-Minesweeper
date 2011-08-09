@@ -1,10 +1,6 @@
 
-def game
-
-end
-
 Given /^I want to play MineSweeper$/ do
-  @game ||= MineSweeper::Game.new
+  @game = MineSweeper::Game.new
 end
 
 When /^I give the board$/ do |input_board|
