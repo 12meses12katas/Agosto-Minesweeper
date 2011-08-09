@@ -36,5 +36,46 @@ module MineSweeper
       @subject.to_s.should == "Field #7:\n...\n...\n...\n...\n"
     end
 
+    it "returns the correct board for one mine" do
+      @subject = Board.new(1,3,3, "...\n.*.\n...\n")
+      @subject.to_s.should == "Field #1:\n111\n1*1\n111\n"
+    end
+
+    it "index works fine" do
+      @subject = Board.new(1,2,3, "...\n...\n")
+      @subject.index(0,0).should == 0
+      @subject.index(0,1).should == 1
+      @subject.index(0,2).should == 2
+      @subject.index(1,0).should == 4
+      @subject.index(1,1).should == 5
+      @subject.index(1,2).should == 6
+    end
+
+    it "[] works fine" do
+      @subject = Board.new(1,2,3, "abc\ndef\n")
+      @subject[0,0].should == "a"
+      @subject[0,1].should == "b"
+      @subject[0,2].should == "c"
+      @subject[1,0].should == "d"
+      @subject[1,1].should == "e"
+      @subject[1,2].should == "f"
+    end
+
+    it "[]= works fine" do
+      @subject = Board.new(1,2,3, "...\...\n")
+      @subject[0,0] = "a"
+      @subject[0,1] = "b"
+      @subject[0,2] = "c"
+      @subject[1,0] = "d"
+      @subject[1,1] = "e"
+      @subject[1,2] = "f"
+      @subject[0,0].should == "a"
+      @subject[0,1].should == "b"
+      @subject[0,2].should == "c"
+      @subject[1,0].should == "d"
+      @subject[1,1].should == "e"
+      @subject[1,2].should == "f"
+    end
+
   end
 end

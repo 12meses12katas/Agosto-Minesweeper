@@ -22,6 +22,8 @@ module MineSweeper
       output
     end
 
+    private
+    
     def get_board(field, lines, columns)
       Board.new field,lines,columns
     end
@@ -33,20 +35,50 @@ module MineSweeper
 
     attr_reader :field, :lines, :columns
     
-    def initialize(field, lines, columns)
+    def initialize(field, lines, columns, string_board=nil)
       @lines = lines
       @columns = columns
       @field = field
+      @string_board = string_board || default_string_board
     end
 
     def to_s
       output = "Field ##{@field}:\n"
-      @lines.times do
-        output << "." * @columns
-        output << "\n"
-      end
+      output << result_board
       output
     end
+
+    def [](line,column)
+      @string_board[index(line,column)]
+    end
+
+    def []=(line,column,value)
+      @string_board[index(line,column)] = value
+    end
+
+    def index(line,column)
+      line * (@columns+1) + column
+    end
+
+    private
+
+    def result_board
+      0.upto(@lines-1) do |line|
+        0.upto(@columns-1) do |column|
+          cell = self[line,column]
+          #self[lines,column] = "f"
+        end
+      end
+      @string_board
+    end
+
+    def default_string_board
+      output = ""
+      @lines.times { output << "." * @columns << "\n" }
+      output
+    end
+
+
 
   end
 
