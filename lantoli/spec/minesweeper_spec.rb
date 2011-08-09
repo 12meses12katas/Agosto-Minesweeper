@@ -6,7 +6,7 @@ module MineSweeper
   describe Game do
     it "creates board with correct size" do
       @subject = Game.new
-   #   @subject.should_receive(:get_board).with(2,3)
+      @subject.should_receive(:get_board).with(1,2,3)
       @subject.play("2 3\n...\n...\n0 0\n")
     end
 
