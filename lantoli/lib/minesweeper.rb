@@ -13,8 +13,9 @@ module MineSweeper
         header = iterator.next.split
         lines,columns = header[0].to_i, header[1].to_i
         break if lines == 0 || columns == 0
-        lines.times { iterator.next }
-        board = get_board(field,lines,columns)
+        string_board = ""
+        lines.times { string_board << iterator.next }
+        board = get_board(field,lines,columns, string_board)
         output << "\n" if field > 1
         field += 1
         output << board.to_s
@@ -24,8 +25,8 @@ module MineSweeper
 
     private
     
-    def get_board(field, lines, columns)
-      Board.new field,lines,columns
+    def get_board(field, lines, columns, string_board)
+      Board.new field,lines,columns, string_board
     end
 
 
