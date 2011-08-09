@@ -11,9 +11,13 @@ module MineSweeper
       iterator = input_positions.each_line
       loop do
         header = iterator.next.split
-        board = get_board(field, header[0].to_i, header[1].to_i)
+        lines,columns = header[0].to_i, header[1].to_i
+        break if lines == 0 || columns == 0
+        lines.times { iterator.next }
+        board = get_board(field,lines,columns)
+        output << "\n" if field > 1
+        field += 1
         output << board.to_s
-        break
       end
       output
     end
