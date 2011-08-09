@@ -41,6 +41,11 @@ module MineSweeper
       @subject.to_s.should == "Field #1:\n111\n1*1\n111\n"
     end
 
+    it "returns the correct board for three mines" do
+      @subject = Board.new(1,3,3, "...\n***\n...\n")
+      @subject.to_s.should == "Field #1:\n232\n***\n232\n"
+    end
+
     it "index works fine" do
       @subject = Board.new(1,2,3, "...\n...\n")
       @subject.index(0,0).should == 0

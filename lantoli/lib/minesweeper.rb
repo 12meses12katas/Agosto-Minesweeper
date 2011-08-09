@@ -84,7 +84,7 @@ module MineSweeper
       cell = self[line,column]
       return "*" if cell == "*"
       return "1" if cell == "."
-      cell
+      (cell.to_i + 1).to_s
     end
 
 
