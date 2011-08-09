@@ -49,6 +49,7 @@ module MineSweeper
       @subject.index(1,0).should == 4
       @subject.index(1,1).should == 5
       @subject.index(1,2).should == 6
+      @subject.index(0,3).should_be_nil
     end
 
     it "[] works fine" do

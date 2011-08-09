@@ -66,7 +66,9 @@ module MineSweeper
       0.upto(@lines-1) do |line|
         0.upto(@columns-1) do |column|
           cell = self[line,column]
-          #self[lines,column] = "f"
+        #  if (cell == "*"
+                      
+        #  end
         end
       end
       @string_board
