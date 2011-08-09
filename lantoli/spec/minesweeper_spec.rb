@@ -49,7 +49,9 @@ module MineSweeper
       @subject.index(1,0).should == 4
       @subject.index(1,1).should == 5
       @subject.index(1,2).should == 6
-      @subject.index(0,3).should_be_nil
+      @subject.index(0,3).should be_nil
+      @subject.index(3,0).should be_nil
+      @subject.index(20,10).should be_nil
     end
 
     it "[] works fine" do
@@ -60,6 +62,7 @@ module MineSweeper
       @subject[1,0].should == "d"
       @subject[1,1].should == "e"
       @subject[1,2].should == "f"
+      @subject[14,13].should be_nil
     end
 
     it "[]= works fine" do
@@ -70,12 +73,14 @@ module MineSweeper
       @subject[1,0] = "d"
       @subject[1,1] = "e"
       @subject[1,2] = "f"
+      @subject[10,20] = "Z"
       @subject[0,0].should == "a"
       @subject[0,1].should == "b"
       @subject[0,2].should == "c"
       @subject[1,0].should == "d"
       @subject[1,1].should == "e"
       @subject[1,2].should == "f"
+      @subject[10,20].should be_nil
     end
 
   end

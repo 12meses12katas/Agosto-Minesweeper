@@ -49,14 +49,17 @@ module MineSweeper
     end
 
     def [](line,column)
-      @string_board[index(line,column)]
+      index = index(line,column)
+      return @string_board[index] unless index.nil?
     end
 
     def []=(line,column,value)
-      @string_board[index(line,column)] = value
+      index = index(line,column)
+      @string_board[index] = value unless index.nil?
     end
 
     def index(line,column)
+      return nil if line<0 || column < 0 || line >= @lines || column >= @columns
       line * (@columns+1) + column
     end
 
