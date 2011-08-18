@@ -1,0 +1,12 @@
+<script type="text/javascript" src="javascripts/MineSweeper.js"></script>
+
+<input type='button' value='new game' onClick="window.location.reload()" />
+<input type='button' value='show' onClick="mineSweeper.show()" />
+
+<table id='board' border='1' cellspacing=0 cellpadding=0></table>
+<div id="status"></div>
+
+<script>
+    var mineSweeper = new MineSweeper(["**...", ".....", ".*..."]);
+    mineSweeper.render();
+</script>
