@@ -1,12 +1,19 @@
+<script type="text/javascript" src="javascripts/Field.js"></script>
+<script type="text/javascript" src="javascripts/FieldRenderer.js"></script>
 <script type="text/javascript" src="javascripts/MineSweeper.js"></script>
+<script type="text/javascript" src="javascripts/MineSweeperGame.js"></script>
 
 <input type='button' value='new game' onClick="window.location.reload()" />
-<input type='button' value='show' onClick="mineSweeper.show()" />
+<input type='button' value='show' onClick="game.showAll()" />
 
 <table id='board' border='1' cellspacing=0 cellpadding=0></table>
 <div id="status"></div>
 
 <script>
-    var mineSweeper = new MineSweeper(["**...", ".....", ".*..."]);
-    mineSweeper.render();
+    var field = new Field(["**...", ".....", ".*..."]);
+    var mineSweeper = new MineSweeper();
+
+    var game = new MineSweeperGame();
+    game.use(mineSweeper);
+    game.present(field);
 </script>

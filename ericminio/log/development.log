@@ -584,3 +584,187 @@ Started GET "/" for 127.0.0.1 at 2011-08-18 18:35:24 -0400
   Processing by WelcomeController#index as HTML
 Rendered welcome/index.html.erb within layouts/application (2.1ms)
 Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-19 14:05:04 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 57ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/proposals" for 127.0.0.1 at 2011-08-19 14:05:06 -0400
+
+ActionController::RoutingError (No route matches "/proposals"):
+  
+
+Rendered /Users/eric/.rvm/gems/ruby-1.9.2-p0@kata/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-19 14:05:09 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-19 14:05:13 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-19 14:05:15 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-19 14:05:28 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-19 14:05:30 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/proposals" for 127.0.0.1 at 2011-08-19 14:08:11 -0400
+
+ActionController::RoutingError (No route matches "/proposals"):
+  
+
+Rendered /Users/eric/.rvm/gems/ruby-1.9.2-p0@kata/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-19 14:08:15 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-19 14:09:33 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-19 14:10:45 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-19 16:59:09 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 55ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 08:07:29 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (97.4ms)
+Completed 200 OK in 209ms (Views: 208.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 08:56:23 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 08:56:41 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 08:56:45 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 08:58:36 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:06:37 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:06:41 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:06:47 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:10:28 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:25:09 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:32:47 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:40:22 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:41:04 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:41:56 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 53ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:44:27 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:53:25 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:53:29 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-20 09:53:33 -0400
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
