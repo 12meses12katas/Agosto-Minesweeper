@@ -16,6 +16,7 @@ class Minesweeper {
     }
 
     protected function initializeSquares(){
+        $this->squares = array();
         for ($row = 0; $row < $this->getRows(); $row++){
             for ($col = 0; $col < $this->getCols(); $col++){
                 $this->initializeSquare($row, $col);
@@ -55,7 +56,7 @@ class Minesweeper {
     }
 
     protected function isMineSquare($value){
-        return ($value === MinesweeperParameters::MINE);
+        return $this->minesweeperParameters->isMineSquare($value);
     }
 
     protected function updateDistancesForRowCol($row, $col){
@@ -82,6 +83,20 @@ class Minesweeper {
 
     public function renderRow($row){
         return implode('', $this->squares[$row]);
+    }
+
+    public function renderFieldName(){
+        return sprintf("Field #%d:", $this->minesweeperParameters->getFieldId());
+    }
+
+    public function render(){
+        $value = $this->renderFieldName();
+        for ($row = 0; $row < $this->getRows(); $row++){
+            $value .= MinesweeperParameters::ROW_SEPARATOR;
+            $value .= $this->renderRow($row);
+        }
+
+        return $value;
     }
     
 }
