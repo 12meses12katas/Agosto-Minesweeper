@@ -5,7 +5,7 @@ class TilesLine extends BaseLine {
 		this.contents = contents
 	}
 
-	void visit(Field field) {
+	def visit(field) {
 		contents.each { tile -> field.addTile tile }
 	}
 }

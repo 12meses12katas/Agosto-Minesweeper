@@ -7,9 +7,9 @@ class DimensionsLine extends BaseLine {
 		this.contents = contents
 	}
 
-	void visit(Field field) {
+	def visit(field) {
 		def space = contents.indexOf(DIMENSIONS_SEPARATOR)
-		field.setWidth contents[space + 1..-1].toInteger()
-		field.setHeight contents[0..space - 1].toInteger()
+		field.setCols contents[space + 1..-1].toInteger()
+		field.setRows contents[0..space - 1].toInteger()
 	}
 }
