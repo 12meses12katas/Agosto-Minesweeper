@@ -59,7 +59,7 @@
           <file leaf-file-name="field_renderer_spec.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spec/javascripts/field_renderer_spec.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="39" column="0" selection-start="1417" selection-end="1417" vertical-scroll-proportion="1.9791666">
+                <state line="39" column="0" selection-start="1417" selection-end="1417" vertical-scroll-proportion="1.300505">
                   <folding />
                 </state>
               </provider>
@@ -78,15 +78,6 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="MineSweeper.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/javascripts/MineSweeper.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="38" column="27" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="index.html.erb_spec.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spec/views/welcome/index.html.erb_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
@@ -100,6 +91,24 @@
             <entry file="file://$PROJECT_DIR$/spec/routing/game_route_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="6" column="43" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="welcome_controller_spec.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/spec/controllers/welcome_controller_spec.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="2" column="12" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="welcome_controller.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/controllers/welcome_controller.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="2" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.077120826">
                   <folding />
                 </state>
               </provider>
@@ -132,10 +141,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/welcome/index.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="17" selection-start="734" selection-end="734" vertical-scroll-proportion="1.3194444">
+                <state line="19" column="26" selection-start="734" selection-end="734" vertical-scroll-proportion="-11.875">
                   <folding />
                 </state>
               </provider>
@@ -175,8 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/spec/javascripts/learning_javascript.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/MineSweeper.js" />
         <option value="$PROJECT_DIR$/spec/javascripts/cheat_sheet_spec.js" />
         <option value="$PROJECT_DIR$/spec/javascripts/field_spec.js" />
         <option value="$PROJECT_DIR$/public/javascripts/Field.js" />
@@ -191,6 +198,8 @@
         <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
         <option value="$PROJECT_DIR$/spec/views/welcome/index.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/spec/routing/game_route_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/controllers/welcome_controller_spec.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
       </list>
     </option>
   </component>
@@ -316,6 +325,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ericminio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ericminio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -360,6 +387,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ericminio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ericminio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -378,7 +423,7 @@
       <recent name="$PROJECT_DIR$/spec/javascripts" />
     </key>
   </component>
-  <component name="RunManager" selected="RSpec.game_route_spec">
+  <component name="RunManager" selected="RSpec.welcome_controller_spec">
     <configuration default="false" name="index.html.erb_spec" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="ericminio" />
@@ -475,6 +520,38 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="welcome_controller_spec" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="ericminio" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/spec/controllers/welcome_controller_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -546,6 +623,13 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="false" name="Development: ericminio" type="RailsRunConfigurationType" factoryName="Rails">
@@ -640,7 +724,7 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
       <method />
     </configuration>
-    <list size="7">
+    <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Rails.Development: ericminio" />
       <item index="1" class="java.lang.String" itemvalue="Rails.Production: ericminio" />
       <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
@@ -648,6 +732,7 @@
       <item index="4" class="java.lang.String" itemvalue="RSpec.index.html_spec" />
       <item index="5" class="java.lang.String" itemvalue="RSpec.index.html.erb_spec" />
       <item index="6" class="java.lang.String" itemvalue="RSpec.game_route_spec" />
+      <item index="7" class="java.lang.String" itemvalue="RSpec.welcome_controller_spec" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -679,7 +764,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -687,9 +772,9 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25832656" sideWeight="0.5014663" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25832656" sideWeight="0.7302053" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49853373" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26979473" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -760,7 +845,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/javascripts/field_renderer_spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1417" selection-end="1417" vertical-scroll-proportion="1.9791666">
+        <state line="39" column="0" selection-start="1417" selection-end="1417" vertical-scroll-proportion="1.300505">
           <folding />
         </state>
       </provider>
@@ -790,16 +875,23 @@
         <state line="14" column="18" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="14" selection-start="770" selection-end="770" vertical-scroll-proportion="0.0">
+        <state line="4" column="16" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/welcome/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="16" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
+        <state line="19" column="26" selection-start="734" selection-end="734" vertical-scroll-proportion="-11.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="14" selection-start="770" selection-end="770" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -818,9 +910,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/welcome/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/spec/controllers/welcome_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="734" selection-end="734" vertical-scroll-proportion="1.3194444">
+        <state line="2" column="12" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/welcome_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.077120826">
           <folding />
         </state>
       </provider>
