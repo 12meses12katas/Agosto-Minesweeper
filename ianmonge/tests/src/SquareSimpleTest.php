@@ -22,41 +22,72 @@ class SquareSimpleTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
+     * Test the method getNumOfBombs().
      */
-    protected function tearDown() {
+    public function testGetNumOfBombs()
+    {
+        $result     = $this->object->getNumOfBombs();
+        $expected   = 0;
         
+        $this->assertEquals( $result, $expected, 'There must be zero bombs.' );
     }
 
     /**
-     * @todo Implement testGetNumOfBombs().
+     * Test the method incrementNumOfBombs().
      */
-    public function testGetNumOfBombs() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+    public function testIncrementNumOfBombs()
+    {
+        $this->object->incrementNumOfBombs();
+        $result     = $this->object->getNumOfBombs();
+        $expected   = 1;
+
+        $this->assertEquals( $result, $expected, 'There must be one bomb near.' );
+        
+        $this->object->incrementNumOfBombs();
+        $result     = $this->object->getNumOfBombs();
+        $expected   = 2;
+
+        $this->assertEquals( $result, $expected, 'There must be two bombs near.' );
+        
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $result     = $this->object->getNumOfBombs();
+        $expected   = 8;
+
+        $this->assertEquals( $result, $expected, 'There must be two bombs near.' );
     }
 
     /**
-     * @todo Implement testIncrementNumOfBombs().
+     * Test the method __toString().
      */
-    public function testIncrementNumOfBombs() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
+    public function test__toString()
+    {
+        $result     = $this->object->__toString();
+        $expected   = '0';
 
-    /**
-     * @todo Implement test__toString().
-     */
-    public function test__toString() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertEquals( $result, $expected, 'The method "__toString" must return "0".' );
+        
+        $this->object->incrementNumOfBombs();
+        $result     = $this->object->__toString();
+        $expected   = '1';
+
+        $this->assertEquals( $result, $expected, 'The method "__toString" must return "1".' );
+        
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $this->object->incrementNumOfBombs();
+        $result     = $this->object->__toString();
+        $expected   = '8';
+
+        $this->assertEquals( $result, $expected, 'The method "__toString" must return "8".' );
     }
 
 }

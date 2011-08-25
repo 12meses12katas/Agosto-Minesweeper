@@ -20,17 +20,23 @@ class SquareSimple extends SquareAbstract
      * @return integer
      */
     public function getNumOfBombs()
-    {}
+    {
+        return $this->numBombs;
+    }
 
     /**
      * Increment the number of bombs near the square.
      */
     public function incrementNumOfBombs()
-    {}
+    {
+        $this->numBombs++;
+    }
     
     /**
-     * Prints the representation of the square.
+     * Returns the representation of the square.
      */
     public function __toString()
-    {}
+    {
+        return (string) $this->numBombs;
+    }
 }

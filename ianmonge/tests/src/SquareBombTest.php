@@ -16,14 +16,16 @@ class SquareBombTest extends PHPUnit_Framework_TestCase {
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
-    protected function setUp() {
+    protected function setUp()
+    {
         $this->object = new SquareBomb;
     }
 
     /**
      * Test the method __toString().
      */
-    public function test__toString() {
+    public function test__toString()
+    {
         $result     = $this->object->__toString();
         $expected   = '*';
         
