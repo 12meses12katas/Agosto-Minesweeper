@@ -11,5 +11,7 @@ class SquareBomb extends SquareAbstract
      * Prints the representation of the square.
      */
     public function __toString()
-    {}
+    {
+        return '*';
+    }
 }
