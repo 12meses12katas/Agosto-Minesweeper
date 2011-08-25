@@ -20,7 +20,9 @@ class SourceFile implements SourceInterface
      * @param mixed $source
      */
     public function setSource( $source )
-    {}
+    {
+        $this->source = $source;
+    }
 
     /**
      * Returns the data to the Minesweeper.
@@ -28,6 +30,10 @@ class SourceFile implements SourceInterface
      * @return array
      */
     public function getData()
-    {}
+    {
+        $fileContent = file( $this->source );
+        
+        return $fileContent;
+    }
 
 }
