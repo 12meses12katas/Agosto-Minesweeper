@@ -18,13 +18,13 @@ end
 Then /^the first line contains the number of rows$/ do
   theParser = Parser.new
   theParser.readFileToString("src/input.txt")
-  assert_equal theParser.getRowsFromRawInput(), "2"
+  assert_equal theParser.getRowsFromRawInput, 2
 end
  
 Then /^the second line contains the number of columns$/ do
   theParser = Parser.new
   theParser.readFileToString("src/input.txt")
-  assert_equal theParser.getColumnsFromRawInput(), "3"
+  assert_equal theParser.getColumnsFromRawInput, 3
 end
 
 # Scenario 2 - Get information
@@ -42,13 +42,39 @@ end
 Then /^the controller must save the number of rows and columns$/ do
   game = Minesweeper.new
   game.main
-  assert_equal "2", game.rows
-  assert_equal "3", game.columns
+  assert_equal 2, game.rows
+  assert_equal 3, game.columns
 end
 
 Then /^the controller must save the grid in a two dimensional array$/ do
-  game = Minesweeper.new
-  game.main
-  assert_equal "\n*..\n..*\n", game.grid
+  theParser = Parser.new
+  theParser.readFileToString("src/input.txt")
+  assert_equal "*..\n..*\n", theParser.getGrid
 end
   
+Then /^the number of rows and columns must be in between (\d+) and (\d+)$/ do |arg1, arg2|
+  theParser = Parser.new
+  theParser.readFileToString("src/inputError.txt")
+  assert_equal "error", theParser.getColumnsFromRawInput 
+  assert_equal "error", theParser.getRowsFromRawInput 
+  theParser.readFileToString("src/input.txt")
+  assert_equal theParser.getColumnsFromRawInput, 3
+  assert_equal theParser.getRowsFromRawInput, 2
+end
+
+When /^the controller recieves the grid$/ do
+  rows, cols = 2,3  
+  grid = [["*",".","."],[".",".","*"]]
+  game = Minesweeper.new
+  game.main
+end
+
+Then /^the parser has to convert it to an Array format$/ do
+  rows, cols = 2,3  
+  grid = [["*",".","."],[".",".","*"]]
+  game = Minesweeper.new
+  game.main
+  assert_equal grid, game.grid
+end
+
+ 
