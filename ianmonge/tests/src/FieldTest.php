@@ -121,10 +121,34 @@ class FieldTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test the method printSolution().
+     * Test the method __toString().
      */
-    public function testPrintSolution()
+    public function test__toString()
     {
+        $output = $this->object->__toString();
+
+        $expected = <<<HEREDOC
+00000
+00000
+00000
+
+HEREDOC;
+        
+        $this->assertEquals( $expected, $output );
+
+        $this->object->setSquareBomb( 0, 0 );
+        $this->object->setSquareBomb( 1, 1 );
+        $this->object->setSquareBomb( 1, 2 );
+        $output = $this->object->__toString();
+
+        $expected = <<<HEREDOC
+*3210
+2**10
+12210
+
+HEREDOC;
+        
+        $this->assertEquals( $expected, $output );
     }
 
 }
