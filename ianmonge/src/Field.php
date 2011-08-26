@@ -1,5 +1,8 @@
 <?php
 
+require_once 'SquareBomb.php';
+require_once 'SquareSimple.php';
+
 class Field
 {
     /**

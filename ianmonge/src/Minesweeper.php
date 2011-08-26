@@ -1,23 +1,18 @@
 <?php
 
+require_once 'Field.php';
+
 /**
  * Class Minesweeper that resolves fields.
  */
 class Minesweeper
 {
     /**
-     * Data from the source.
-     *
-     * @var array
-     */
-    protected $data;
-    
-    /**
      * Set of Fields.
      *
      * @var array
      */
-    protected $fields;
+    protected $fields = array();
     
     /**
      * Sets the data from the source.
@@ -25,8 +20,48 @@ class Minesweeper
      * @param array $data
      */
     public function setData( array $data )
-    {}
-    
-    public function processData()
-    {}
+    {
+        $line = 0;
+//        var_dump( $data[ $line ] );
+//        die;
+        while ( "0 0\n" != $data[ $line ] )
+        {
+            list( $rowsNum, $colsNum ) = explode( ' ', $data[ $line ] );
+            $field = new Field( $rowsNum, $colsNum );
+            $this->fields[] = $field;
+
+            $line++;
+            for ( $row = 0; $row < $rowsNum; $row++ )
+            {
+                for ( $col = 0; $col < $colsNum; $col++ )
+                {
+                    if ( '*' == $data[ $line ][ $col ] )
+                    {
+                        $field->setSquareBomb( $row, $col );
+                    }
+                }
+                $line++;
+            }
+        }
+    }
+
+    /**
+     * Prints the solutions of the fields.
+     * 
+     * 
+     */
+    public function printSolutions()
+    {
+        $output = '';
+
+        foreach( $this->fields as $index => $field )
+        {
+            $output .= 'Field #' . ( $index + 1 ) . ':' . PHP_EOL;
+            $output .= $field->__toString() . PHP_EOL;
+        }
+        
+        $output = substr( $output, 0, -1 );
+        
+        return $output;
+    }
 }
