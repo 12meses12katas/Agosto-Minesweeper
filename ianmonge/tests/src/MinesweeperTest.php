@@ -22,63 +22,65 @@ class MinesweeperTest extends PHPUnit_Framework_TestCase
         $this->object = new Minesweeper;
     }
 
+    public function providerSetData()
+    {
+        $field1 = new Field( 2, 2 );
+        $field1->setSquareBomb( 0, 0 );
+        $field1->setSquareBomb( 1, 1 );
+
+        $field2 = new Field( 2, 2 );
+        $field2->setSquareBomb( 0, 0 );
+        $field2->setSquareBomb( 0, 1 );
+        $field2->setSquareBomb( 1, 0 );
+        $field2->setSquareBomb( 1, 1 );
+        
+        $dataProvider = array(
+            'Without fields' => array(
+                'data' => array(
+                    '0 0',
+                ),
+                'expected' => array(),
+            ),
+            'Field without bombs' => array(
+                'data' => array(
+                    '2 2',
+                    '..',
+                    '..',
+                    '0 0',
+                ),
+                'expected' => array( new Field( 2, 2 ) ),
+            ),
+            'Field with bombs' => array(
+                'data' => array(
+                    '2 2',
+                    '*.',
+                    '.*',
+                    '0 0',
+                ),
+                'expected' => array( $field1 ),
+            ),
+            'Field filled of bombs' => array(
+                'data' => array(
+                    '2 2',
+                    '**',
+                    '**',
+                    '0 0',
+                ),
+                'expected' => array( $field2 ),
+            ),
+        );
+        
+        return $dataProvider;
+    }
+
     /**
      * Test the method setData().
+     * 
+     * @dataProvider providerSetData
      */
-    public function testSetData()
+    public function testSetData( $data, $expected )
     {
-        $data = array( "0 0\n" );
         $this->object->setData( $data );
-        
-        $this->assertAttributeEmpty( 'fields', $this->object );
-
-        $input = <<<HEREDOC
-2 2
-..
-..
-0 0
-
-HEREDOC;
-        $data = preg_split( '/(\n)/', $input, null, PREG_SPLIT_DELIM_CAPTURE );
-        $this->object->setData( $data );
-        
-        $expected = array( new Field( 2, 2 ) );
-        
-        $this->assertAttributeEquals( $expected, 'fields', $this->object );
-
-        $input = <<<HEREDOC
-2 2
-*.
-.*
-0 0
-
-HEREDOC;
-        $data = preg_split( '/(\n)/', $input, null, PREG_SPLIT_DELIM_CAPTURE );
-        $this->object->setData( $data );
-        
-        $field = new Field( 2, 2 );
-        $field->setSquareBomb( 0, 0 );
-        $field->setSquareBomb( 1, 1 );
-        $expected[] = $field ;
-        
-        $this->assertAttributeEquals( $expected, 'fields', $this->object );
-
-        $input = <<<HEREDOC
-2 2
-**
-**
-0 0
-
-HEREDOC;
-        $data = preg_split( '/(\n)/', $input, null, PREG_SPLIT_DELIM_CAPTURE );
-        $this->object->setData( $data );
-        
-        $field = new Field( 2, 2 );
-        $field->setSquareBomb( 0, 0 );
-        $field->setSquareBomb( 0, 1 );
-        $field->setSquareBomb( 1, 0 );
-        $field->setSquareBomb( 1, 1 );
-        $expected[] = $field ;
         
         $this->assertAttributeEquals( $expected, 'fields', $this->object );
     }
@@ -88,17 +90,16 @@ HEREDOC;
      */
     public function testPrintSolutions()
     {
-        $input = <<<HEREDOC
-2 2
-*.
-.*
-3 5
-*....
-.**..
-.....
-0 0
-HEREDOC;
-        $data = preg_split( '/(\n)/', $input, null, PREG_SPLIT_DELIM_CAPTURE );
+        $data = array(
+            '2 2',
+            '*.',
+            '.*',
+            '3 5',
+            '*....',
+            '.**..',
+            '.....',
+            '0 0',
+        );
         $this->object->setData( $data );
         
         $output = $this->object->printSolutions();

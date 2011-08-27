@@ -22,9 +22,8 @@ class Minesweeper
     public function setData( array $data )
     {
         $line = 0;
-//        var_dump( $data[ $line ] );
-//        die;
-        while ( "0 0\n" != $data[ $line ] )
+
+        while ( '0 0' != $data[ $line ] )
         {
             list( $rowsNum, $colsNum ) = explode( ' ', $data[ $line ] );
             $field = new Field( $rowsNum, $colsNum );

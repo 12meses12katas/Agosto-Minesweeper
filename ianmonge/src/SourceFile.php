@@ -31,7 +31,7 @@ class SourceFile implements SourceInterface
      */
     public function getData()
     {
-        $fileContent = file( $this->source );
+        $fileContent = file( $this->source, FILE_IGNORE_NEW_LINES );
         
         return $fileContent;
     }

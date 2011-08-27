@@ -41,12 +41,20 @@ class SourceFileTest extends PHPUnit_Framework_TestCase
         $source     = dirname( __FILE__ ) . '/SourceFileTestInput.dat';
         $this->object->setSource( $source );
         $result     = $this->object->getData();
-        $expected   = 10;
-        
-        $this->assertEquals( $expected, count( $result ) );
 
-        $expected   = '0 0';
-        $this->assertContains( $expected, $result[9] );
+        $expected   = array(
+            '4 4',
+            '*...',
+            '....',
+            '.*..',
+            '....',
+            '3 5',
+            '**...',
+            '.....',
+            '.*...',
+            '0 0',
+        );
+        $this->assertEquals( $expected, $result );
     }
 
 }
