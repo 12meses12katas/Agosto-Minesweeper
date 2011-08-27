@@ -5,7 +5,8 @@ require_once dirname(__FILE__) . '/../../src/SquareBomb.php';
 /**
  * Test class for SquareBomb.
  */
-class SquareBombTest extends PHPUnit_Framework_TestCase {
+class SquareBombTest extends PHPUnit_Framework_TestCase
+{
 
     /**
      * @var SquareBomb
