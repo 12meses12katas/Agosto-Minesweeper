@@ -1,0 +1,17 @@
+Rendered welcome/index.html.erb (0.6ms)
+Rendered welcome/index.html.erb (34.8ms)
+Rendered welcome/index.html.erb (0.7ms)
+Rendered welcome/index.html.erb (0.7ms)
+Rendered welcome/index.html.erb (0.9ms)
+Rendered welcome/index.html.erb (0.6ms)
+Rendered welcome/index.html.erb (0.6ms)
+Rendered welcome/index.html.erb (0.6ms)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
