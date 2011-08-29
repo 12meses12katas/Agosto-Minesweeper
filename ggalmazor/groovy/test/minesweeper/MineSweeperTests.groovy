@@ -6,10 +6,10 @@ import static org.junit.Assert.assertThat
 import static org.hamcrest.CoreMatchers.is
 
 class MineSweeperTests {
-	@Before
-	void resetFieldRepository() {
-		FieldRepository.reset()
-	}
+    @Before
+    void "Resetear el repositorio de tableros"() {
+        FieldRepository.reset()
+    }
 
 	@Test
 	void "Crea un campo de minas de 1 por 1"() {
@@ -20,8 +20,8 @@ class MineSweeperTests {
 		]
 		def mineSweeper = new MineSweeper()
 		mineSweeper.solve(input)
-		assertThat FieldRepository[0].width, is(1)
-		assertThat FieldRepository[0].height, is(1)
+		assertThat FieldRepository[0].cols, is(1)
+		assertThat FieldRepository[0].rows, is(1)
 	}
 
 	@Test
@@ -36,8 +36,8 @@ class MineSweeperTests {
 		]
 		def mineSweeper = new MineSweeper()
 		mineSweeper.solve(input)
-		assertThat FieldRepository[0].width, is(1)
-		assertThat FieldRepository[1].height, is(2)
+		assertThat FieldRepository[0].cols, is(1)
+		assertThat FieldRepository[1].rows, is(2)
 	}
 
 	@Test
@@ -58,7 +58,7 @@ Field #2:
 """
 		def mineSweeper = new MineSweeper()
 		mineSweeper.solve(input)
-		assertThat mineSweeper.getAllSolutions(), is(solution)
+		assertThat mineSweeper.renderSolutions(), is(solution)
 	}
 
 	@Test
@@ -79,7 +79,7 @@ Field #2:
 """
 		def mineSweeper = new MineSweeper()
 		mineSweeper.solve(input)
-		assertThat mineSweeper.getAllSolutions(), is(solution)
+		assertThat mineSweeper.renderSolutions(), is(solution)
 	}
 
 	@Test
@@ -108,7 +108,7 @@ Field #2:
 """
 		def mineSweeper = new MineSweeper()
 		mineSweeper.solve(input)
-		assertThat mineSweeper.getAllSolutions(), is(solution)
+		assertThat mineSweeper.renderSolutions(), is(solution)
 	}
 
 	@Test
@@ -139,7 +139,7 @@ Field #2:
 """
 		def mineSweeper = new MineSweeper()
 		mineSweeper.solve(input)
-		assertThat mineSweeper.getAllSolutions(), is(solution)
+		assertThat mineSweeper.renderSolutions(), is(solution)
 	}
 }
 

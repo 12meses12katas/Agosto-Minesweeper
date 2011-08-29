@@ -29,7 +29,7 @@ System.in.withReader { prompt ->
 				throw new Exception("Wrong row count: ${row} (only ${field.h} declared)")
 			}
 			if (line.size() != field["w"]) {
-				throw new Exception("Wrong width at row ${row}: ${line.length()}")
+				throw new Exception("Wrong cols at row ${row}: ${line.length()}")
 			}
 			line.each { tile ->
 				if ("." != tile && "*" != tile)
