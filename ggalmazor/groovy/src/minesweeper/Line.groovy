@@ -1,8 +1,8 @@
 package minesweeper
 
 interface Line {
-	public static EOF_DEFINITION = "0 0"
-	void visit(Field field)
+    static EOF_DEFINITION = "0 0"
 
-	boolean isEOF()
+    def visit(field)
+    def isEOF()
 }

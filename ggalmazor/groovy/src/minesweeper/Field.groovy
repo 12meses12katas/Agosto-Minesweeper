@@ -1,51 +1,72 @@
 package minesweeper
 
 class Field {
-	public static final String SAFE_TILE = "."
-	public static final String MINE_TILE = "*"
-	int width, height
-	def tiles = []
+    static final SAFE_TILE = "."
+    static final MINE_TILE = "*"
+    def cols, rows
+    def tiles = []
 
-	void addTile(String tile) {
-		tiles << tile
-	}
+    def addTile(tile) {
+        tiles << tile
+    }
 
-	int getPosition(int x, int y) {
-		x + y * width
-	}
+    def reveal() {
+        (0..rows - 1).each { revealRow it }
+    }
 
-	int countMinesAt(int x, int y) {
-		def mines = 0
-		mines += isPositionMined(x - 1, y - 1) ? 1 : 0
-		mines += isPositionMined(x, y - 1) ? 1 : 0
-		mines += isPositionMined(x + 1, y - 1) ? 1 : 0
-		mines += isPositionMined(x - 1, y) ? 1 : 0
-		mines += isPositionMined(x + 1, y) ? 1 : 0
-		mines += isPositionMined(x - 1, y + 1) ? 1 : 0
-		mines += isPositionMined(x, y + 1) ? 1 : 0
-		mines += isPositionMined(x + 1, y + 1) ? 1 : 0
-		return mines
-	}
+    def revealRow(row) {
+        (0..cols - 1).each { revealTileAt it, row }
+    }
 
-	boolean isPositionSafe(int x, int y) {
-		SAFE_TILE == getTileAtPosition(x, y)
-	}
+    def revealTileAt(col, row) {
+        if (isSafeAt(col, row))
+            setMinesNextTo col, row, countMinesAt(col, row)
+    }
 
-	boolean isPositionMined(int x, int y) {
-		MINE_TILE == getTileAtPosition(x, y)
-	}
+    def isSafeAt(col, row) {
+        SAFE_TILE == getTileAtPosition(col, row)
+    }
 
-	def getTileAtPosition(int x, int y) {
-		if (isOutOfBounds(x, y))
-			return null
-		return tiles[getPosition(x, y)]
-	}
+    def setMinesNextTo(col, row, mines) {
+        tiles[getPosition(col, row)] = mines
+    }
 
-	private boolean isOutOfBounds(int x, int y) {
-		return x < 0 || x >= width || y < 0 || y >= height
-	}
+    def countMinesAt(col, row) {
+        def mines = 0
+        mines += isMineAt(col - 1, row - 1) ? 1 : 0
+        mines += isMineAt(col, row - 1) ? 1 : 0
+        mines += isMineAt(col + 1, row - 1) ? 1 : 0
+        mines += isMineAt(col - 1, row) ? 1 : 0
+        mines += isMineAt(col + 1, row) ? 1 : 0
+        mines += isMineAt(col - 1, row + 1) ? 1 : 0
+        mines += isMineAt(col, row + 1) ? 1 : 0
+        mines += isMineAt(col + 1, row + 1) ? 1 : 0
+        return mines
+    }
 
-	void setMinesAt(int x, int y, int mines) {
-		tiles[getPosition(x, y)] = mines
-	}
+    def isMineAt(col, row) {
+        MINE_TILE == getTileAtPosition(col, row)
+    }
+
+    def getTileAtPosition(col, row) {
+        if (isOutOfBounds(col, row))
+            return null
+        return tiles[getPosition(col, row)]
+    }
+
+    def isOutOfBounds(col, row) {
+        return col < 0 || col >= cols || row < 0 || row >= rows
+    }
+
+    def getPosition(col, row) {
+       return col + row * cols
+    }
+
+    def render() {
+        return (0..rows - 1).inject("") { solution, row -> solution += "${renderRow(row)}\n" }
+    }
+
+    def renderRow(row) {
+        return (0..cols - 1).inject("") { solution, col -> solution += getTileAtPosition(col, row) }
+    }
 }
