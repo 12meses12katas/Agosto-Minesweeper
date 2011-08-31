@@ -11,12 +11,7 @@
 #   - dist/**/*.js
 #
 src_files:
-  - public/javascripts/prototype.js
-  - public/javascripts/effects.js
-  - public/javascripts/controls.js
-  - public/javascripts/dragdrop.js
-  - public/javascripts/application.js
-  - public/javascripts/**/*.js
+    - public/javascripts/**/*.js
 
 # stylesheets
 #
@@ -30,7 +25,6 @@ src_files:
 #   - stylesheets/*.css
 #
 stylesheets:
-  - stylesheets/**/*.css
 
 # helpers
 #
@@ -43,11 +37,10 @@ stylesheets:
 #   - helpers/**/*.js
 #
 helpers:
-  - helpers/**/*.js
 
 # spec_files
 #
-# Return an array of filepaths relative to spec_dir to include.
+#  Return an array of filepaths relative to spec_dir to include.
 # Default: ["**/*[sS]pec.js"]
 #
 # EXAMPLE:
@@ -56,7 +49,6 @@ helpers:
 #   - **/*[sS]pec.js
 #
 spec_files:
-  - '**/*[sS]pec.js'
 
 # src_dir
 #
@@ -78,4 +70,4 @@ src_dir:
 #
 # spec_dir: spec/javascripts
 #
-spec_dir: spec/javascripts
+spec_dir:
