@@ -41,7 +41,7 @@ When /^the parser parses the input$/ do
 end
 Then /^the controller must save the number of rows and columns$/ do
   game = Minesweeper.new
-  game.main
+  game.main("src/input.txt")
   assert_equal 2, game.rows
   assert_equal 3, game.columns
 end
@@ -66,14 +66,14 @@ When /^the controller recieves the grid$/ do
   rows, cols = 2,3  
   grid = [["*",".","."],[".",".","*"]]
   game = Minesweeper.new
-  game.main
+  game.main("src/input.txt")
 end
 
 Then /^the parser has to convert it to an Array format$/ do
   rows, cols = 2,3  
   grid = [["*",".","."],[".",".","*"]]
   game = Minesweeper.new
-  game.main
+  game.main("src/input.txt")
   assert_equal grid, game.grid
 end
 

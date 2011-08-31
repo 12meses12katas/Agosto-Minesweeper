@@ -39,14 +39,30 @@ class Transformer
       minePositionRow = positionOfMines[i][0]
       minePositionColumn = positionOfMines[i][1]
       # Columns code - Set +1 for the cells next to the mine
-      grid[minePositionRow][minePositionColumn+1] += 1 unless minePositionColumn+1 >= gridColumns-1 or grid[minePositionRow][minePositionColumn+1] == "*"
-      grid[minePositionRow][minePositionColumn-1] += 1 unless minePositionColumn-1 <= 0 or grid[minePositionRow][minePositionColumn-1] == "*"  
+      grid[minePositionRow][minePositionColumn+1] += 1 unless minePositionColumn+1 > gridColumns-1 or grid[minePositionRow][minePositionColumn+1] == "*"
+      grid[minePositionRow][minePositionColumn-1] += 1 unless minePositionColumn-1 < 0 or grid[minePositionRow][minePositionColumn-1] == "*"  
       # Rows code - Set +1 for the cells above and below the mine
-      grid[minePositionRow+1][minePositionColumn] += 1 unless minePositionColumn+1 >= gridColumns-1 or grid[minePositionRow+1][minePositionColumn] == "*"
-      grid[minePositionRow-1][minePositionColumn] += 1 unless minePositionColumn-1 <= 0 or grid[minePositionRow-1][minePositionColumn] == "*"  
+      grid[minePositionRow+1][minePositionColumn] += 1 unless minePositionRow+1 > gridRows-1 or grid[minePositionRow+1][minePositionColumn] == "*"
+      grid[minePositionRow-1][minePositionColumn] += 1 unless minePositionRow-1 < 0 or grid[minePositionRow-1][minePositionColumn] == "*"  
       # Diagonals code - Set +1 for cells top right, top left, down right, down left
+      # Down Right
+      grid[minePositionRow+1][minePositionColumn+1] += 1 unless minePositionRow+1 > gridRows-1 or 
+                                                                minePositionColumn+1 > gridColumns-1 or 
+                                                                grid[minePositionRow+1][minePositionColumn+1] == "*"
+      # Down Left
+      grid[minePositionRow-1][minePositionColumn+1] += 1 unless minePositionRow-1 < 0 or 
+                                                                minePositionColumn+1 > gridColumns-1 or 
+                                                                grid[minePositionRow-1][minePositionColumn+1] == "*"
+      # Top Right
+      grid[minePositionRow+1][minePositionColumn-1] += 1 unless minePositionRow+1 > gridRows-1 or 
+                                                                minePositionColumn-1 < 0 or 
+                                                                grid[minePositionRow+1][minePositionColumn-1] == "*"
+      # Top Left
+      grid[minePositionRow-1][minePositionColumn-1] += 1 unless minePositionRow-1 < 0 or 
+                                                                minePositionColumn-1 < 0 or 
+                                                                grid[minePositionRow-1][minePositionColumn-1] == "*"
     end
-    puts grid
+    grid
   end
 
   def initializeGridToZero(grid,rows,columns)

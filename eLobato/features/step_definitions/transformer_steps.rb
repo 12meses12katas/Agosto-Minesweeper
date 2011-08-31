@@ -33,7 +33,7 @@ Then /^the transformer must increment by (\d+) the number on each of the positio
   grid = [["*",".","."],[".",".","*"]]
   positionOfMines = { 0 => [0,0], 1 => [1,2]}
   gridWithMineHints = transformer.setMineHints(grid,positionOfMines)
-  grid = [["*","2","1"],["1","2","*"]]
+  grid = [["*",2,1],[1,2,"*"]]
   assert_equal grid, gridWithMineHints
 end
 
@@ -42,7 +42,7 @@ Then /^this procedure has to be repeated for all the mines$/ do
   grid = [["*",".","."],[".",".","*"]]
   positionOfMines = { 0 => [0,0], 1 => [1,2]}
   gridWithMineHints = transformer.setMineHints(grid,positionOfMines)
-  grid = [["*","2","1"],["1","2","*"]]
+  grid = [["*",2,1],[1,2,"*"]]
   assert_equal grid, gridWithMineHints
 end
 
