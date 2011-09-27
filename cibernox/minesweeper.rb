@@ -17,11 +17,13 @@ class Minesweeper
   def numbers
     res = ""
     arys.each_with_index do |field, field_index|
-      res << "Field ##{field_index + 1}\n" if field.size > 0
+      res << "Field ##{field_index + 1}:\n" if field.size > 0
       field.each_with_index do |line, i|
         line.each_with_index { |e, j| res << (e == '*' ? '*' : surrounding_bombs(field, i, j)) }
-        res << "\n"
+        res << "\n" if line.size > 0
       end
+      res << "\n" unless field_index == arys.size-1
+      res.chop! if field.size == 0
     end
     res
   end
