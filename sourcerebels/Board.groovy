@@ -3,7 +3,7 @@ class Board {
 	private final String ENDLINE = '\n'
 	private final String SAFE_PLACE = '.'
 	private final String MINE = '*'
-	public List board
+	private List board
 	
 	public Board(String input) {
 		parseInput(input)

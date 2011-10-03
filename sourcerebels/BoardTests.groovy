@@ -4,7 +4,6 @@ import static org.junit.Assert.*
 
 class BoardTests {
 	
-
 	@Test
 	void shouldResolve1x1BoardWithoutMines() {
 		Board board = new Board('.\n')
@@ -32,7 +31,6 @@ class BoardTests {
 	@Test
 	void shouldResolveMoreComplexGame() {
 		Board board = new Board('*...\n*.*.\n....\n...*\n')
-		def result = board.resolve()
 		assertEquals '*311\n*3*1\n1222\n001*\n', board.resolve()
 	}
 }
