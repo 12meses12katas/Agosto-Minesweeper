@@ -1,9 +1,14 @@
 class BoardParser {
 
 	public static final String ENDLINE = '\n'
+	
+	//Eliminar
 	public static final String SPACE = ' '
 	
+	//Eliminar
 	public static final Integer HEIGHT_POSITION = 0
+	
+	//Eliminar
 	public static final Integer WIDTH_POSITION = 1
 	
 	List<Board> boards = []
@@ -25,13 +30,13 @@ class BoardParser {
 		lines = readLines(input)
 		actual = 0
 		
-		parseHeader()
-		while(!isLastLine()) {
+		BoardConfiguration config = new BoardConfiguration(lines[actual])
+		while(!config.lastBoard()) {
 
 			def boardEndLine = actual + height
 			addNewBoard(cutLines(actual + 1, boardEndLine))
 			updateActual()
-			parseHeader()
+			config = new BoardConfiguration(lines[actual])
 		}
 	}
 	
@@ -50,23 +55,5 @@ class BoardParser {
 
 	private String cutLines(Integer start, Integer end) {
 		return lines[start..end].join(ENDLINE)
-	}
-
-	private void parseHeader() {
- 		this.header = lines[actual].split(SPACE)
-		parseHeight()
-		parseWidth()
-	}
-
-	private void parseHeight() {
-		this.height = Integer.valueOf(header[HEIGHT_POSITION])
-	}
-
-	private void parseWidth() {
-		this.width = Integer.valueOf(header[WIDTH_POSITION])
-	}
-	
-	private Boolean isLastLine() {
-		return (height == 0 && width == 0)
 	}
 }

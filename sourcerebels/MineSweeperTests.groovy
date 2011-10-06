@@ -5,7 +5,7 @@ import static org.junit.Assert.*
 class MineSweeperTests {
 	
 	@Test
-	void should() {
+	void shouldResolveComplexGame() {
 		
 		String input = "4 4\n" +
                        "*...\n" +
