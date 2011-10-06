@@ -17,7 +17,6 @@ class BoardParser {
 		
 		while(!board.lastBoard()) {
 			parseBoard(board)
-			updateCounters(board)
 			board = readNextBoard()
 		}
 	}
@@ -30,6 +29,7 @@ class BoardParser {
 		if (!board.lastBoard()) {
 			board.parse(readBoard(board.height))
 			boards.add(board)
+			updateCounters(board)
 		}
 	}
 	

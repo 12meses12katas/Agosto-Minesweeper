@@ -19,6 +19,17 @@ class BoardConfiguration {
 	public Boolean lastBoard() {
 		return (height == 0 && width == 0)
 	}
+	
+	private Boolean valid(Integer line, Integer place) {
+		if (!validLine(line)) {
+			return false
+		}
+		return place >= 0 && place < width
+	}
+
+	private Boolean validLine(Integer line) {
+		return line >= 0 && line < height
+	}	
 
 	private void parseHeight() {
 		this.height = Integer.valueOf(header[HEIGHT_POSITION])
