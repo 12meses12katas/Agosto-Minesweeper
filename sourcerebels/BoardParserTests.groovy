@@ -14,6 +14,7 @@ class BoardParserTests {
 		assertEquals "0\n", boards[0].resolve()
 	}
 	
+
 	@Test
 	void shouldParseAListOfBoards() {
 		

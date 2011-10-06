@@ -5,8 +5,19 @@ class Board {
 	private final String MINE = '*'
 	private List board
 	
-	public Board(String input) {
-		parseInput(input)
+	private BoardConfiguration config
+	
+	public Board(String header) {
+		config = new BoardConfiguration(header)
+	}
+	
+	public String parse(String input) {
+		board = []
+		def lines = readLines(input)
+		lines.each { line ->
+			def parsedLine = parseLine(line)
+			board.add(parsedLine)
+		}
 	}
 	
 	public resolve() {
@@ -16,6 +27,18 @@ class Board {
 			result = result + resolveLine(line, lineCount)
 		}
 		return result
+	}
+	
+	public Boolean lastBoard() {
+		return config.lastBoard()
+	}
+	
+	public Integer getHeight() {
+		return config.height
+	}
+	
+	public Integer getWidth() {
+		return config.width
 	}
 	
 	private resolveLine(String line, Integer lineCount) {
@@ -102,15 +125,6 @@ class Board {
 
 	private Boolean validLine(Integer line) {
 		return line >= 0 && line < board.size()
-	}
-	
-	private String parseInput(String input) {
-		board = []
-		def lines = readLines(input)
-		lines.each { line ->
-			def parsedLine = parseLine(line)
-			board.add(parsedLine)
-		}
 	}
 	
 	private String parseLine(String input) {

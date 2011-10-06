@@ -2,55 +2,58 @@ class BoardParser {
 
 	public static final String ENDLINE = '\n'
 	
-	//Eliminar
-	public static final String SPACE = ' '
-	
-	//Eliminar
-	public static final Integer HEIGHT_POSITION = 0
-	
-	//Eliminar
-	public static final Integer WIDTH_POSITION = 1
-	
 	List<Board> boards = []
 	
 	private lines
 	private Integer actual
-	
-	private Integer height
-	private Integer width
-	
-	private header
 
 	public BoardParser(String input) {
 		parse(input)
 	}
 	
 	private void parse(String input) {
+		initializeParser(input)
+		Board board = readNextBoard()
 		
-		lines = readLines(input)
-		actual = 0
-		
-		BoardConfiguration config = new BoardConfiguration(lines[actual])
-		while(!config.lastBoard()) {
-
-			def boardEndLine = actual + height
-			addNewBoard(cutLines(actual + 1, boardEndLine))
-			updateActual()
-			config = new BoardConfiguration(lines[actual])
+		while(!board.lastBoard()) {
+			parseBoard(board)
+			updateCounters(board)
+			board = readNextBoard()
 		}
 	}
 	
-	private updateActual() {
-		actual = actual + 1 + height
+	private Board readNextBoard() {
+		return new Board(header())
 	}
 	
-	private addNewBoard(String input) {
-		Board board = new Board(input)
-		boards.add(board)
+	private parseBoard(Board board) {
+		if (!board.lastBoard()) {
+			board.parse(readBoard(board.height))
+			boards.add(board)
+		}
 	}
 	
+	private String header() {
+		return lines[actual]
+	}
+	
+	private initializeParser(String input) {
+		readLines(input)
+		actual = 0
+	}
+	
+	private updateCounters(Board parsedBoard) {
+		actual = actual + parsedBoard.height + 1
+	}
+		
 	private readLines(String input) {
-		return input.split(ENDLINE)
+		lines = input.split(ENDLINE)
+	}
+	
+	private readBoard(Integer height) {
+		def nextLine = actual + 1
+		def boardEndLine = actual + height
+		cutLines(nextLine, boardEndLine)
 	}
 
 	private String cutLines(Integer start, Integer end) {
