@@ -1,10 +1,10 @@
 class BoardParser {
 
-	public final String ENDLINE = '\n'
-	public final String SPACE = ' '
+	public static final String ENDLINE = '\n'
+	public static final String SPACE = ' '
 	
-	public final Integer HEIGHT_POSITION = 0
-	public final Integer WIDTH_POSITION = 1
+	public static final Integer HEIGHT_POSITION = 0
+	public static final Integer WIDTH_POSITION = 1
 	
 	List<Board> boards = []
 	

@@ -23,7 +23,7 @@ class MineSweeper {
 	}
 	
 	private String endLineIfNoLastBoard(Integer count) {
-		if (count < boards.size() - 1) {
+		if (count < parser.boards.size() - 1) {
 			return BoardParser.ENDLINE
 		}
 		return ""
