@@ -1,0 +1,11 @@
+<script type="text/javascript" src="javascripts/Common.js"></script>
+<script type="text/javascript" src="javascripts/Field.js"></script>
+<script type="text/javascript" src="javascripts/Board.js"></script>
+<script type="text/javascript" src="javascripts/Game.js"></script>
+Mine Sweeper
+<script>
+	var game = new Game();
+	game.renderWith(new Board());
+	game.playWith(new Field(["**...", ".....", ".*..."]));
+	game.start();
+</script>
